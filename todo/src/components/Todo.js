@@ -33,20 +33,20 @@ class Todo extends Component {
 
             <h1>TODO LIST</h1>
             
-            <input
+            <input className="inputList"
                 type="text"
                 value={this.state.newValue}
                 onChange={this.handleChanges}
                  />
             <button onClick={this.addTodo}>Add Todo</button>
             
-            <div>
+            <div className="todoBorder">
             {this.props.todo.map(( todoList, index ) => (
-                <h2 onClick={e => this.toggleTodo(e, index)} 
-                
-                key={index}> 
+                <li onClick={e => this.toggleTodo(e, index)} 
+                //trying to add line-through here
+                key={index} > 
                 {todoList.value}
-                </h2>
+                </li>
             ))}
             </div>
            
