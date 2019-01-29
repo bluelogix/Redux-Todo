@@ -27,11 +27,19 @@ class Todo extends Component {
         return (
             <>
             <h1>TODO LIST</h1>
+            <input
+                type="text"
+                value={this.state.newValue}
+                onChange={this.handleChanges}
+                 />
+            <button onClick={this.addFriend}>Add Todo</button>
+            
             <div>
             {this.props.todo.map(( todoList, index ) => (
-                <h2 key={index}>{todoList.name}</h2>
+                <h2 key={index}>{todoList.value}</h2>
             ))}
             </div>
+           
 
             </> // fragment
         );
