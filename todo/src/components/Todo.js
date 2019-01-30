@@ -19,6 +19,7 @@ class Todo extends Component {
     addTodo = e => {
      e.preventDefault();
      this.props.addTodo(this.state.newValue);
+     this.setState({newValue: ''})
     };
 
     toggleTodo = (e, index) => {
@@ -37,13 +38,14 @@ class Todo extends Component {
                 type="text"
                 value={this.state.newValue}
                 onChange={this.handleChanges}
+                placeholder="Add a new task.."
                  />
             <button onClick={this.addTodo}>Add Todo</button>
             
             <div className="todoBorder">
-            {this.props.todo.map(( todoList, index ) => (
+            {this.props.todo.map(( todoList, index  ) => (
                 <li onClick={e => this.toggleTodo(e, index)} 
-                //trying to add line-through here
+                className={todoList.completed ? 'completedTodo' : ''}
                 key={index} > 
                 {todoList.value}
                 </li>

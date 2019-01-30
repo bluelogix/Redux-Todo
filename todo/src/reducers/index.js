@@ -23,6 +23,7 @@ const reducer = ( state = initialState, action) => {
         todo: [...state.todo, newTodo]
       };
       case TOGGLE_TODO:
+        console.log('toggle_todo', action)
         return {
             ...state, 
                 todo: state.todo.map((todoList, index) => 
